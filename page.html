@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #ff6b6b, #ffd3d3);
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px;
+            margin: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            color: #ff4b6e;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .message {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 2rem;
+            padding: 0 1rem;
+        }
+
+        .heart {
+            position: absolute;
+            animation: float 3s ease-in-out infinite;
+            color: #ff4b6e;
+            font-size: 24px;
+            opacity: 0.6;
+        }
+
+        .button {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            background: #ff4b6e;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+            margin: 1rem;
+            width: 80%;
+            max-width: 300px;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+            background: #ff3356;
+        }
+
+        .hidden {
+            display: none;
+            margin: 1rem;
+            font-style: italic;
+            color: #ff4b6e;
+            padding: 0 1rem;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+            padding: 0 1rem;
+        }
+
+        .memory {
+            aspect-ratio: 1;
+            background: #ffd3d3;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: transform 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .memory:hover {
+            transform: scale(1.05);
+        }
+
+        .memory img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .memory-caption {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 0.5rem;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .message {
+                font-size: 1rem;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .container {
+                padding: 1rem;
+                margin: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Feliz San Valentín, Mi Amor! ❤️</h1>
+        
+        <div class="message">
+            Desde el dia en que te conoci, te has vuelto importante para mi. Cada día a tu lado es un regalo especial. Tu sonrisa ilumina mi mundo y tu amor hace que todo sea posible. Eres mi mejor amiga, mi confidente, mi inspiracion, y el amor de mi vida.
+        </div>
+
+        <button class="button" id="showLove">Sabes Por Qué Te Amo</button>
+        <p class="hidden" id="loveReason"></p>
+
+        <div class="gallery">
+            <!-- Aquí puedes reemplazar la URL del placeholder con la URL de tu imagen -->
+            <div class="memory">
+                <img src="WhatsApp Image 2025-02-15 at 12.45.01 AM (3).jpeg" alt="Nuestra primera vez en cine">
+                <div class="memory-caption">Nuestra primera vez en cine</div>
+            </div>
+            <div class="memory">
+                <img src="WhatsApp Image 2025-02-15 at 12.45.01 AM.jpeg" alt="Esa foto en el sena recostado en tu hombro">
+                <div class="memory-caption">Esa foto en el sena recostado en tu hombro</div>
+            </div>
+            <div class="memory">
+                <img src="WhatsApp Image 2025-02-15 at 12.45.01 AM (2).jpeg" alt="Esa primer foto en mi casa">
+                <div class="memory-caption">Esa primer foto en mi casa</div>
+            </div>
+            <div class="memory">
+                <img src="WhatsApp Image 2025-02-15 at 12.45.01 AM (1).jpeg" alt="Esa foto recostado en tu piernas">
+                <div class="memory-caption">Esa foto recostado en tu piernas</div>
+            </div>
+            <div class="memory">
+                <img src="WhatsApp Image 2025-02-15 at 12.45.00 AM (2).jpeg" alt="Nosotros disfrazados">
+                <div class="memory-caption">Nosotros disfrazados</div>
+            </div>
+            <div class="memory">
+                <img src="WhatsApp Image 2025-02-15 at 12.45.00 AM (1).jpeg" alt="Nuestra primer salida juntos a un lugar distinto">
+                <div class="memory-caption">Nuestra primer salida juntos a un lugar distinto</div>
+            </div>
+            <div class="memory">
+                <img src="WhatsApp Image 2025-02-15 at 12.45.00 AM.jpeg" alt="Nuestra ultima foto juntos">
+                <div class="memory-caption">Nuestra ultima foto juntos</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const loveReasons = [
+            "Porque has estado cuando mas te necesito",
+            "La forma en que me haces reír cuando más lo necesito",
+            "Tu manera única de ver el mundo",
+            "La forma en que me apoyas en todo momento",
+            "Cómo me haces querer ser mejor persona",
+            "La magia que traes a mi vida cada día",
+            "Por esa sonrinsa que me encanta",
+            "Cada beso, piquito, abrazo que nos hemos dado",
+            "Esa manera en la que te muestras como tu eres",
+            "Amo esos momentos de lucura tuyos"
+        ];
+
+        document.getElementById('showLove').addEventListener('click', function() {
+            const reasonElement = document.getElementById('loveReason');
+            const randomReason = loveReasons[Math.floor(Math.random() * loveReasons.length)];
+            reasonElement.textContent = randomReason;
+            reasonElement.style.display = 'block';
+        });
+
+        function createFloatingHearts() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            heart.style.opacity = Math.random() * 0.5 + 0.3;
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createFloatingHearts, 300);
+    </script>
+</body>
+</html>
